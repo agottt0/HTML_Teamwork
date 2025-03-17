@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>精美服饰购物网站</title>
+    <meta name="description" content="精美服饰购物网站，精选时尚服饰，舒适实用，打造你的专属风格。">
+    <meta name="keywords" content="服饰, 购物, 时尚, 穿搭, 衣服, 饰品">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">牢Jor穿搭</div>
+        <div class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">新品上架</a>
+            <a href="#">热卖推荐</a>
+            <a href="#">联系牢Jor</a>
+        </div>
+    </nav>
     <!-- 顶部滑动展览栏 -->
     <div class="slider-container">
         <div class="slider">
@@ -21,25 +34,36 @@
             <img src="image9.jpeg" alt="服饰9">
             <img src="image10.jpeg" alt="服饰10">
         </div>
+        <!-- 左右按钮 -->
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
     </div>
 
     <!-- 服饰展示区 -->
     <div class="clothing-grid">
         <div class="clothing-item">
-            <img src="images/1.jpeg" alt="服饰1">
+            <img src="images/1.jpeg" alt="红色连衣裙，时尚舒适">
             <div class="clothing-description">
                 <p>这是服饰1的描述，非常时尚且舒适。</p>
             </div>
+            <button class="add-to-cart-btn">加入购物车</button>
         </div>
         <div class="clothing-item">
-            <img src="clothing2.jpg" alt="服饰2">
+            <img src="images/clothing2.jpg" alt="蓝色牛仔外套，潮流百搭">
             <div class="clothing-description">
                 <p>这是服饰2的描述，适合各种场合。</p>
             </div>
+            <button class="add-to-cart-btn">加入购物车</button>
         </div>
         <!-- 更多服饰项 -->
     </div>
 
-    <script src="script.js"></script>
+    <!-- 页脚 -->
+    <footer>
+        <p>联系我们: contact@jingmeifushi.com | 电话: 110</p>
+        <p>© 2025 牢jor购物网站 版权所有</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- 未来可以写交互用 -->
 </body>
 </html>

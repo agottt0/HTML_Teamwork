@@ -6,6 +6,31 @@ body {
     background-color: #f4f4f4;
 }
 
+/* 导航栏 */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 /* 滑动展览栏样式 */
 .slider-container {
     width: 100%;
@@ -21,6 +46,33 @@ body {
 .slider img {
     width: 100%;
     height: auto;
+}
+
+/* 左右按钮样式 */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
 }
 
 /* 服饰展示区样式 */
@@ -64,4 +116,27 @@ body {
 
 .clothing-item:hover {
     transform: scale(1.05);
+}
+
+/* 按钮样式 */
+.add-to-cart-btn {
+    padding: 8px 12px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #e65c00;
+}
+
+/* 页脚 */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
 }
