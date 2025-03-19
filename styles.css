@@ -81,16 +81,19 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
+    gap: 20px; /* 增加间距 */
 }
 
 .clothing-item {
-    position: relative;
     width: 30%;
     margin: 10px;
-    overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #fff;
+    text-align: center; /* 让按钮居中 */
     transition: transform 0.3s ease;
+    position: relative;
 }
 
 .clothing-item img {
@@ -99,6 +102,39 @@ body {
     display: block;
 }
 
+/* 外层容器 */
+.clothing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 20px;
+}
+
+.clothing-item {
+    width: 30%;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+/* 图片容器 */
+.image-container {
+    position: relative;
+}
+
+/* 图片本身 */
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 悬浮描述层 */
 .clothing-description {
     position: absolute;
     bottom: -100%;
@@ -110,27 +146,33 @@ body {
     transition: bottom 0.3s ease;
 }
 
-.clothing-item:hover .clothing-description {
+/* hover 时描述层上移 */
+.image-container:hover .clothing-description {
     bottom: 0;
 }
 
-.clothing-item:hover {
+/* 图片整体放大效果 */
+.image-container:hover img {
     transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 /* 按钮样式 */
 .add-to-cart-btn {
-    padding: 8px 12px;
+    margin: 15px 0 20px 0;
+    padding: 10px 16px;
     background-color: #ff6600;
     color: white;
     border: none;
-    cursor: pointer;
     border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .add-to-cart-btn:hover {
     background-color: #e65c00;
 }
+
 
 /* 页脚 */
 footer {
