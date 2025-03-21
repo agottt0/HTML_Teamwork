@@ -1,10 +1,10 @@
 // 分类对应图片数据
 const categories = {
     new: [
-        'images/1.jpeg',
-        'images/2.jpeg',
-        'images/3.jpeg',
-        'images/4.jpeg'
+        'images/展示区/L1.jpeg',
+        'images/展示区/L2.jpeg',
+        'images/展示区/L3.jpeg',
+        'images/展示区/L4.jpeg'
     ],
     hot: [
         'images/5.jpeg',
@@ -33,7 +33,7 @@ function renderSlider(category) {
 
 // 更新滑动位置
 function updateSlider() {
-    const offset = -currentIndex * (300 + 20); // 图片宽度+margin
+    const offset = -currentIndex * (800 + 10); // 图片宽度+margin
     slider.style.transform = `translateX(${offset}px)`;
 }
 
