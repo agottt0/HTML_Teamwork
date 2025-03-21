@@ -20,26 +20,31 @@
             <a href="#">联系牢Jor</a>
         </div>
     </nav>
-    <!-- 顶部滑动展览栏 -->
-    <div class="slider-container">
-        <div class="slider">
-            <img src="images/1.jpeg" alt="服饰1">
-            <img src="images/2.jpeg" alt="服饰2">
-            <img src="images/3.jpeg" alt="服饰3">
-            <img src="images/4.jpeg" alt="服饰4">
-            <img src="images/5.jpeg" alt="服饰5">
-            <img src="images/6.jpeg" alt="服饰6">
-            <img src="images/7.jpeg" alt="服饰7">
-            <img src="images/8.jpeg" alt="服饰8">
-            <img src="images/9.jpeg" alt="服饰9">
-            <img src="images/10.jpeg" alt="服饰10">
-        </div>
-        <!-- 左右按钮 -->
-        <button class="prev-btn">&#10094;</button>
-        <button class="next-btn">&#10095;</button>
-    </div>
 
-    <!-- 服饰展示区 -->
+    
+    <div class="main-container">
+        <!-- 左侧分类列表 -->
+        <div class="category-list">
+            <div class="category-item" data-category="new">新品介绍</div>
+            <div class="category-item" data-category="hot">热销产品</div>
+            <!-- 可继续增加其他类别 -->
+        </div>
+    
+        <!-- 右侧展览栏 -->
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slider" id="slider">
+                    <!-- 图片组通过 JS 动态切换 -->
+                </div>
+            </div>
+            <!-- 滑动按钮 -->
+            <button class="prev-btn">&#10094;</button>
+            <button class="next-btn">&#10095;</button>
+        </div>
+    </div>
+    
+
+    <!-- 服饰选购区 -->
     <div class="clothing-grid">
         <div class="clothing-item">
             <!-- 图片和悬浮层容器 -->
