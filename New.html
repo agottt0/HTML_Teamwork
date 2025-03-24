@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Arrivals - ASPHALT ALLEY</title>
+    <link rel="stylesheet" href="New.css">
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <header>
+            <img src="Images/Logo.jpeg" alt="ASPHALT ALLEY" class="logo">
+        </header>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="New.html">New Arrivals</a>
+            <a href="Trending.html">Trending Now</a>
+            <a href="Contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- 展示区 -->
+    <section class="showcase">
+        <div class="category-switch">
+            <span class="category-option active" data-category="men">男装</span> |
+            <span class="category-option" data-category="women">女装</span>
+        </div>
+
+        <div class="image-layout">
+            <div class="left">
+                <img src="Images/1.jpeg" alt="Left Image" class="switch-image men-img">
+                <img src="Images/2.jpeg" alt="Left Image" class="switch-image women-img hidden">
+            </div>
+            <div class="center">
+                <img src="Images/3.jpeg" alt="Center Image" class="switch-image men-img">
+                <img src="Images/4.jpeg" alt="Center Image" class="switch-image women-img hidden">
+            </div>
+            <div class="right">
+                <div class="top">
+                    <img src="Images/7.jpeg" alt="Right Top Image" class="switch-image men-img">
+                    <img src="Images/8.jpeg" alt="Right Top Image" class="switch-image women-img hidden">
+                </div>
+                <div class="bottom">
+                    <img src="Images/9.jpeg" alt="Right Bottom Image" class="switch-image men-img">
+                    <img src="Images/10.jpeg" alt="Right Bottom Image" class="switch-image women-img hidden">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 切换图片
+        const categoryOptions = document.querySelectorAll('.category-option');
+        const menImages = document.querySelectorAll('.men-img');
+        const womenImages = document.querySelectorAll('.women-img');
+
+        categoryOptions.forEach(option => {
+            option.addEventListener('mouseenter', () => {
+                categoryOptions.forEach(o => o.classList.remove('active'));
+                option.classList.add('active');
+
+                if (option.dataset.category === 'men') {
+                    menImages.forEach(img => img.classList.remove('hidden'));
+                    womenImages.forEach(img => img.classList.add('hidden'));
+                } else {
+                    womenImages.forEach(img => img.classList.remove('hidden'));
+                    menImages.forEach(img => img.classList.add('hidden'));
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
