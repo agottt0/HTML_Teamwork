@@ -6,6 +6,13 @@ body {
     background-color: #f4f4f4;
 }
 
+.logo {
+    width: 150px; /* 调整 logo 宽度 */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* 导航栏 */
 .navbar 
 {
