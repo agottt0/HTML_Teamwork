@@ -1,20 +1,13 @@
 // 分类对应图片数据
 const categories = {
     new: [
-        'Images/展示区/L1.jpeg',
-        'Images/展示区/L2.jpeg',
-        'Images/展示区/L3.jpeg',
-        'Images/展示区/L4.jpeg'
-    ],
-    hot: [
-        'Images/5.jpeg',
-        'Images/6.jpeg',
-        'Images/7.jpeg',
-        'Images/8.jpeg'
+        '../images/展示区/L1.jpeg',
+        '../images/展示区/L2.jpeg',
+        '../images/展示区/L3.jpeg',
+        '../images/展示区/L4.jpeg'
     ]
 };
 
-const categoryItems = document.querySelectorAll('.category-item');
 const slider = document.getElementById('slider');
 let currentIndex = 0;
 let currentCategory = 'new'; // 默认类别
@@ -33,7 +26,7 @@ function renderSlider(category) {
 
 // 更新滑动位置
 function updateSlider() {
-    const offset = -currentIndex * (800 + 10); // 图片宽度+margin
+    const offset = -currentIndex * (760); // 图片宽度+margin
     slider.style.transform = `translateX(${offset}px)`;
 }
 
@@ -52,16 +45,7 @@ document.querySelector('.next-btn').addEventListener('click', () => {
     }
 });
 
-// 悬停切换类别
-categoryItems.forEach(item => {
-    item.addEventListener('mouseenter', (e) => {
-        const category = e.target.getAttribute('data-category');
-        if (category !== currentCategory) {
-            currentCategory = category;
-            renderSlider(category);
-        }
-    });
-});
+
 // ...（前面的分类和轮播代码保持不变）...
 
 // 🟢 修改：初始化购物车数据
@@ -73,12 +57,12 @@ const products = {
     "C1": {
         name: "Street Style Color Block Sweatshirt",
         price: 299,
-        image: "images/C1.jpeg"
+        image: "../images/C1.jpeg"
     },
     "C2": {
         name: "Denim Couple Streetwear Set",
         price: 599,
-        image: "images/C2.jpeg"
+        image: "../images/C2.jpeg"
     }
 };
 
