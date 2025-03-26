@@ -1,16 +1,16 @@
 // 分类对应图片数据
 const categories = {
     new: [
-        'images/展示区/L1.jpeg',
-        'images/展示区/L2.jpeg',
-        'images/展示区/L3.jpeg',
-        'images/展示区/L4.jpeg'
+        'Images/展示区/L1.jpeg',
+        'Images/展示区/L2.jpeg',
+        'Images/展示区/L3.jpeg',
+        'Images/展示区/L4.jpeg'
     ],
     hot: [
-        'images/5.jpeg',
-        'images/6.jpeg',
-        'images/7.jpeg',
-        'images/8.jpeg'
+        'Images/5.jpeg',
+        'Images/6.jpeg',
+        'Images/7.jpeg',
+        'Images/8.jpeg'
     ]
 };
 
@@ -159,6 +159,59 @@ function updateCartUI() {
     }
 }
 
+const checkoutButton = document.createElement('button');
+checkoutButton.textContent = "结算";
+checkoutButton.className = "checkout-btn";
+checkoutButton.style.display = "none";
+checkoutButton.addEventListener("click", () => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    window.location.href = "checkout.html";
+});
+
+document.getElementById("cartPanel").appendChild(checkoutButton);
+
+// 修改 updateCartUI 以控制结算按钮显示
+function updateCartUI() {
+    const counter = document.getElementById('cartCounter');
+    const itemsContainer = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    
+    counter.textContent = cartItems.length;
+    counter.style.display = cartItems.length ? 'block' : 'none';
+    cartTotal.textContent = cartItems.length;
+    
+    if (cartItems.length === 0) {
+        itemsContainer.innerHTML = '<div class="empty-cart">您还没有将任何商品加入购物车</div>';
+        checkoutButton.style.display = "none";
+    } else {
+        itemsContainer.innerHTML = cartItems.map(item => `
+            <div class="cart-item">
+                <img src="${item.image}" width="50" height="50">
+                <div style="flex:1; padding:0 10px">
+                    <div>${item.name}</div>
+                    <div style="color:#666">¥${item.price}</div>
+                </div>
+                <button class="remove-item-btn" data-id="${item.id}">移除</button>
+            </div>
+        `).join('');
+        checkoutButton.style.display = "block";
+    }
+    
+    document.querySelectorAll('.remove-item-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const itemId = parseInt(btn.getAttribute('data-id'));
+            cartItems = cartItems.filter(item => item.id !== itemId);
+            updateCartUI();
+        });
+    });
+}
+
+// 初始渲染
+document.addEventListener("DOMContentLoaded", () => {
+    renderSlider(currentCategory); // 🟢 页面加载时自动渲染轮播图
+});
+
 // 🟢 修改：初始化调用updateCartUI
 updateCartUI();
 
@@ -167,5 +220,4 @@ updateCartUI();
 // 初始化隐藏小红点
 updateCartCounter();
 
-// 初始渲染
-renderSlider(currentCategory);
+
