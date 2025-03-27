@@ -1,148 +1,79 @@
-// 分类对应图片数据
-const categories = {
+// 分类对应图片数据和按钮样式配置
+const categoriesWithStyles = {
     new: [
-        '../images/展示区/L1.jpeg',
-        '../images/展示区/L2.jpeg',
-        '../images/展示区/L3.jpeg',
-        '../images/展示区/L4.jpeg'
+        {
+            image: '../images/展示区/L5S.png',
+            productId: 'L5S',
+            buttonStyle: {
+                bottom: '40px',
+                left: '20%',
+                transform: 'translateX(-50%)',
+                backgroundColor: 'rgba(0,0,0,0.9)',
+                color: 'white',
+                padding: '12px 30px',
+                borderRadius: '0'
+            }
+        },
+        {
+            image: '../images/展示区/L6S.png',
+            productId: 'L6S',
+            buttonStyle: {
+                bottom: '55%',
+                left: '20px',
+                transform: 'none',
+                backgroundColor: 'rgba(20,20,20,0.9)',
+                color: '#f8f8f8',
+                padding: '10px 25px'
+            }
+        },
+        {
+            image: '../images/展示区/L9.jpeg',
+            productId: 'L9',
+            buttonStyle: {
+                top: '80%',
+                left: '5%',
+                transform: 'none',
+                backgroundColor: 'rgba(20,20,20,0.9)',
+                color: '#f8f8f8',
+                padding: '10px 25px'
+            }
+        },
+        {
+            image: '../images/展示区/L8.jpeg',
+            productId: 'L8',
+            buttonStyle: {
+                top: '80%',
+                left: '70%',
+                transform: 'none',
+                backgroundColor: 'rgba(20,20,20,0.9)',
+                color: '#f8f8f8',
+                padding: '10px 25px'
+            }
+        }
     ]
+};
+
+// 商品数据
+const products = {
+    "C1": { name: "Street Style Color Block Sweatshirt", price: 299, image: "../images/C1.jpeg" },
+    "C2": { name: "Denim Couple Streetwear Set", price: 599, image: "../images/C2.jpeg" },
+    "L5S": { name: "Best-seller Suit for Lady", price: 999, image: "../images/展示区/L5S.jpeg" },
+    "L6S": { name: "Trendy Oversized Hoodie", price: 899, image: "../images/展示区/L6S.png" },
+    "L9": { name: "Limited Edition Jacket", price: 799, image: "../images/展示区/L9.jpeg" },
+    "L8": { name: "Fashion Sporty Set", price: 699, image: "../images/展示区/L8.jpeg" }
 };
 
 const slider = document.getElementById('slider');
 let currentIndex = 0;
-let currentCategory = 'new'; // 默认类别
-
-// 渲染当前类别的图片
-function renderSlider(category) {
-    slider.innerHTML = '';
-    categories[category].forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        slider.appendChild(img);
-    });
-    currentIndex = 0;
-    updateSlider();
-}
-
-// 更新滑动位置
-function updateSlider() {
-    const offset = -currentIndex * (760); // 图片宽度+margin
-    slider.style.transform = `translateX(${offset}px)`;
-}
-
-// 左右按钮事件
-document.querySelector('.prev-btn').addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateSlider();
-    }
-});
-
-document.querySelector('.next-btn').addEventListener('click', () => {
-    if (currentIndex < categories[currentCategory].length - 1) {
-        currentIndex++;
-        updateSlider();
-    }
-});
-
-
-// ...（前面的分类和轮播代码保持不变）...
-
-// 🟢 修改：初始化购物车数据
+let currentCategory = 'new';
 let cartItems = [];
+
 const cartCounter = document.getElementById('cartCounter');
+const cartPanel = document.getElementById('cartPanel');
+const cartItemsContainer = document.getElementById('cartItems');
+const cartTotal = document.getElementById('cartTotal');
 
-// 🟢 修改：商品数据对象
-const products = {
-    "C1": {
-        name: "Street Style Color Block Sweatshirt",
-        price: 299,
-        image: "../images/C1.jpeg"
-    },
-    "C2": {
-        name: "Denim Couple Streetwear Set",
-        price: 599,
-        image: "../images/C2.jpeg"
-    }
-};
-
-// 🟢 修改：购物车图标点击事件
-document.querySelector('.cart-container').addEventListener('click', (e) => {
-    e.stopPropagation();
-    const panel = document.getElementById('cartPanel');
-    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-    updateCartUI(); // 🟢 每次打开都刷新内容
-});
-
-// 🟢 新增：关闭按钮点击事件
-document.getElementById('cartCloseBtn').addEventListener('click', (e) => {
-    e.stopPropagation();
-    document.getElementById('cartPanel').style.display = 'none';
-});
-
-// 🟢 修改：添加购物车功能
-document.querySelectorAll('.add-to-cart-btn').forEach((button, index) => {
-    button.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const productId = `C${index + 1}`;
-        const product = products[productId];
-        
-        cartItems.push({
-            id: Date.now(),
-            ...product
-        });
-        
-        updateCartUI();
-        
-        // 保持浮窗打开状态
-        document.getElementById('cartPanel').style.display = 'block';
-    });
-});
-
-// 🟢 修改：更新购物车UI（完整实现）
-function updateCartUI() {
-    const counter = document.getElementById('cartCounter');
-    const itemsContainer = document.getElementById('cartItems');
-    const cartTotal = document.getElementById('cartTotal');
-    
-    // 更新计数器
-    counter.textContent = cartItems.length;
-    counter.style.display = cartItems.length ? 'block' : 'none';
-    cartTotal.textContent = cartItems.length; // 🟢 更新标题中的数量
-    
-    // 更新浮窗内容
-    if(cartItems.length === 0) {
-        itemsContainer.innerHTML = '<div class="empty-cart">您还没有将任何商品加入购物车</div>';
-    } else {
-        itemsContainer.innerHTML = cartItems.map(item => `
-            <div class="cart-item">
-                <img src="${item.image}" width="50" height="50" style="object-fit: cover">
-                <div style="flex:1; padding:0 10px">
-                    <div>${item.name}</div>
-                    <div style="color:#666">¥${item.price}</div>
-                </div>
-                <button class="remove-item-btn" data-id="${item.id}">移除</button>
-            </div>
-        `).join('');
-    }
-    
-    // 🟢 新增：为所有移除按钮绑定事件
-    document.querySelectorAll('.remove-item-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const itemId = parseInt(btn.getAttribute('data-id'));
-            cartItems = cartItems.filter(item => item.id !== itemId);
-            updateCartUI();
-        });
-    });
-    
-    // 动画效果
-    if(cartItems.length > 0) {
-        counter.style.transform = 'scale(1.2)';
-        setTimeout(() => counter.style.transform = 'scale(1)', 200);
-    }
-}
-
+// 结算按钮
 const checkoutButton = document.createElement('button');
 checkoutButton.textContent = "结算";
 checkoutButton.className = "checkout-btn";
@@ -151,24 +82,63 @@ checkoutButton.addEventListener("click", () => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     window.location.href = "checkout.html";
 });
+cartPanel.appendChild(checkoutButton);
 
-document.getElementById("cartPanel").appendChild(checkoutButton);
+// 渲染轮播
+function renderSlider(category) {
+    slider.innerHTML = '';
+    categoriesWithStyles[category].forEach((item, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'slide';
 
-// 修改 updateCartUI 以控制结算按钮显示
+        const img = document.createElement('img');
+        img.src = item.image;
+
+        const addBtn = document.createElement('button');
+        addBtn.className = 'slider-add-btn';
+        addBtn.textContent = 'ADD TO CART';
+
+        // 样式
+        Object.keys(item.buttonStyle).forEach(property => {
+            addBtn.style[property] = item.buttonStyle[property];
+        });
+
+        // 点击事件
+        addBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const product = products[item.productId];
+            if (product) {
+                cartItems.push({ id: Date.now(), ...product });
+                updateCartUI();
+                cartPanel.style.display = 'block';
+            }
+        });
+
+        slide.appendChild(img);
+        slide.appendChild(addBtn);
+        slider.appendChild(slide);
+    });
+    currentIndex = 0;
+    updateSlider();
+}
+
+// 更新轮播位置
+function updateSlider() {
+    const offset = -currentIndex * 760;
+    slider.style.transform = `translateX(${offset}px)`;
+}
+
+// 更新购物车UI
 function updateCartUI() {
-    const counter = document.getElementById('cartCounter');
-    const itemsContainer = document.getElementById('cartItems');
-    const cartTotal = document.getElementById('cartTotal');
-    
-    counter.textContent = cartItems.length;
-    counter.style.display = cartItems.length ? 'block' : 'none';
+    cartCounter.textContent = cartItems.length;
+    cartCounter.style.display = cartItems.length ? 'block' : 'none';
     cartTotal.textContent = cartItems.length;
-    
+    checkoutButton.style.display = cartItems.length ? 'block' : 'none';
+
     if (cartItems.length === 0) {
-        itemsContainer.innerHTML = '<div class="empty-cart">您还没有将任何商品加入购物车</div>';
-        checkoutButton.style.display = "none";
+        cartItemsContainer.innerHTML = '<div class="empty-cart">您还没有将任何商品加入购物车</div>';
     } else {
-        itemsContainer.innerHTML = cartItems.map(item => `
+        cartItemsContainer.innerHTML = cartItems.map(item => `
             <div class="cart-item">
                 <img src="${item.image}" width="50" height="50">
                 <div style="flex:1; padding:0 10px">
@@ -178,9 +148,9 @@ function updateCartUI() {
                 <button class="remove-item-btn" data-id="${item.id}">移除</button>
             </div>
         `).join('');
-        checkoutButton.style.display = "block";
     }
-    
+
+    // 绑定删除
     document.querySelectorAll('.remove-item-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -189,19 +159,54 @@ function updateCartUI() {
             updateCartUI();
         });
     });
+
+    // 动画
+    if (cartItems.length > 0) {
+        cartCounter.style.transform = 'scale(1.3)';
+        setTimeout(() => cartCounter.style.transform = 'scale(1)', 200);
+    }
 }
 
-// 初始渲染
-document.addEventListener("DOMContentLoaded", () => {
-    renderSlider(currentCategory); // 🟢 页面加载时自动渲染轮播图
+// 左右按钮
+document.querySelector('.prev-btn')?.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+    }
+});
+document.querySelector('.next-btn')?.addEventListener('click', () => {
+    if (currentIndex < categoriesWithStyles[currentCategory].length - 1) {
+        currentIndex++;
+        updateSlider();
+    }
 });
 
-// 🟢 修改：初始化调用updateCartUI
-updateCartUI();
+// 购物车浮窗开关
+document.querySelector('.cart-container').addEventListener('click', (e) => {
+    e.stopPropagation();
+    cartPanel.style.display = cartPanel.style.display === 'block' ? 'none' : 'block';
+    updateCartUI();
+});
+document.getElementById('cartCloseBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    cartPanel.style.display = 'none';
+});
 
-// ...（后面的初始渲染代码保持不变）...
-
-// 初始化隐藏小红点
-updateCartCounter();
-
-
+// 初始化
+document.addEventListener("DOMContentLoaded", () => {
+    renderSlider(currentCategory);
+    updateCartUI();
+});
+// 绑定商品展示区的按钮
+document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const productId = button.getAttribute('data-product-id');
+        const product = products[productId];
+        if (product) {
+            cartItems.push({ id: Date.now(), ...product });
+            updateCartUI();
+            cartPanel.style.display = 'block';
+        }
+    });
+});
