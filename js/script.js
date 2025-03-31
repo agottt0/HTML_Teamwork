@@ -58,9 +58,9 @@ const products = {
     "C1": { name: "Street Style Color Block Sweatshirt", price: 299, image: "../images/C1.jpeg" },
     "C2": { name: "Denim Couple Streetwear Set", price: 599, image: "../images/C2.jpeg" },
     "L5S": { name: "Best-seller Suit for Lady", price: 999, image: "../images/展示区/L5S.jpeg" },
-    "L6S": { name: "Trendy Oversized Hoodie", price: 899, image: "../images/展示区/L6S.png" },
-    "L9": { name: "Limited Edition Jacket", price: 799, image: "../images/展示区/L9.jpeg" },
-    "L8": { name: "Fashion Sporty Set", price: 699, image: "../images/展示区/L8.jpeg" }
+    "L6S": { name: "Best-seller suit for gentlemen", price: 899, image: "../images/展示区/L6S.png" },
+    "L9": { name: "Limited Edition Fur Coat", price: 799, image: "../images/展示区/L9.jpeg" },
+    "L8": { name: "Fashion Suit Set", price: 699, image: "../images/展示区/L8.jpeg" }
 };
 
 const slider = document.getElementById('slider');
