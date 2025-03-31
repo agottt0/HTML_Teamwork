@@ -1,0 +1,128 @@
+/* 基本样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.logo {
+    width: 120px; /* 调整 logo 宽度 */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-left: 20px;
+}
+
+/* 导航栏 */
+.navbar 
+{
+    background-color: #ffffff;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    margin-right: 30px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #3a86ff; /* 悬停色 */
+    text-decoration: none; /* 移除默认下划线 */
+    border-bottom: 2px solid currentColor; /* 底部边框 */
+    padding-bottom: 2px; /* 增加间距 */
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* 页面标题 */
+.page-title {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 32px;
+    color: #333;
+}
+
+/* 商品展示 */
+.clothing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.clothing-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.clothing-description p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.add-to-cart-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #444;
+}
+
+/* 购物车 */
+.cart-container {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cart-panel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: none;
+}
+
+.cart-close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending Now - ASPHALT ALLEY</title>
+    <link rel="stylesheet" href="../css/trending.css">
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <header>
+            <img src="../images/Logo.jpeg" alt="ASPHALT ALLEY" class="logo">
+        </header>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="New.html">New Arrivals</a>
+            <a href="Trending.html" class="active">Trending Now</a>
+            <a href="Contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- 主内容 -->
+    <div class="main-container">
+        <h1 class="page-title">Trending Now</h1>
+
+        <!-- 商品展示区域 -->
+        <div class="clothing-grid">
+            <div class="clothing-item">
+                <div class="image-container">
+                    <img src="../images/T1.jpeg" alt="Oversized Hoodie">
+                    <div class="clothing-description">
+                        <p>Oversized Street Hoodie - Comfortable and stylish, perfect for everyday wear.</p>
+                    </div>
+                </div>
+                <button class="add-to-cart-btn" data-product-id="T1">Add to cart</button>
+            </div>
+
+            <div class="clothing-item">
+                <div class="image-container">
+                    <img src="../images/T2.jpeg" alt="Urban Sneakers">
+                    <div class="clothing-description">
+                        <p>Urban Sneakers - Trendy high-top sneakers for ultimate street style.</p>
+                    </div>
+                </div>
+                <button class="add-to-cart-btn" data-product-id="T2">Add to cart</button>
+            </div>
+
+            <div class="clothing-item">
+                <div class="image-container">
+                    <img src="../images/T3.jpeg" alt="Graphic T-shirt">
+                    <div class="clothing-description">
+                        <p>Graphic T-shirt - Bold prints, modern design, and top-tier comfort.</p>
+                    </div>
+                </div>
+                <button class="add-to-cart-btn" data-product-id="T3">Add to cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 购物车 -->
+    <div class="cart-container">
+        <div class="cart-icon">
+            🛒
+            <span class="badge" id="cartCounter">0</span>
+        </div>
+    </div>
+
+    <div class="cart-panel" id="cartPanel">
+        <button class="cart-close-btn" id="cartCloseBtn">×</button>
+        <h3>购物车（<span id="cartTotal">0</span>）</h3>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">您还没有将任何商品加入购物车</div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>Contact Us: E-Mail-2186510014@qq.com  Phone-18833691103</p>
+        <p>© 2025 ASPHALT ALLEY All rights reserved</p>
+    </footer>
+
+    <script src="../js/trending.js"></script>
+</body>
+</html>
