@@ -75,7 +75,7 @@ const cartTotal = document.getElementById('cartTotal');
 
 // 结算按钮
 const checkoutButton = document.createElement('button');
-checkoutButton.textContent = "结算";
+checkoutButton.textContent = "Checkout";
 checkoutButton.className = "checkout-btn";
 checkoutButton.style.display = "none";
 checkoutButton.addEventListener("click", () => {
@@ -136,7 +136,7 @@ function updateCartUI() {
     checkoutButton.style.display = cartItems.length ? 'block' : 'none';
 
     if (cartItems.length === 0) {
-        cartItemsContainer.innerHTML = '<div class="empty-cart">您还没有将任何商品加入购物车</div>';
+        cartItemsContainer.innerHTML = '<div class="empty-cart">You have not put anything in the cart.</div>';
     } else {
         cartItemsContainer.innerHTML = cartItems.map(item => `
             <div class="cart-item">
@@ -145,7 +145,7 @@ function updateCartUI() {
                     <div>${item.name}</div>
                     <div style="color:#666">¥${item.price}</div>
                 </div>
-                <button class="remove-item-btn" data-id="${item.id}">移除</button>
+                <button class="remove-item-btn" data-id="${item.id}">Remove</button>
             </div>
         `).join('');
     }
