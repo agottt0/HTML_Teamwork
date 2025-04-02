@@ -55,9 +55,11 @@ const categoriesWithStyles = {
 
 // 商品数据
 const products = {
-    "C1": { name: "Street Style Color Block Sweatshirt", price: 299, image: "../images/C1.jpeg" },
-    "C2": { name: "Denim Couple Streetwear Set", price: 599, image: "../images/C2.jpeg" },
-    "L5S": { name: "Best-seller Suit for Lady", price: 999, image: "../images/展示区/L5S.jpeg" },
+    "D1": { name: "Power Suit · The Art of Command", price: 499, image: "../images/D1.jpeg" },
+    "D2": { name: "Silhouette · The Poetry of Power", price: 799, image: "../images/D2.jpeg" },
+    "D3": { name: "Metropolitan Maverick · The Rebel in Refinement", price: 599 , image: "../images/D3.jpeg" },
+    "D4": { name: "Urban Statesman · The Contemporary Classic", price: 649, image: "../images/D4.jpeg" },
+    "L5S": { name: "Best-seller Suit for Lady", price: 999, image: "../images/展示区/L5S.png" },
     "L6S": { name: "Best-seller suit for gentlemen", price: 899, image: "../images/展示区/L6S.png" },
     "L9": { name: "Limited Edition Fur Coat", price: 799, image: "../images/展示区/L9.jpeg" },
     "L8": { name: "Fashion Suit Set", price: 699, image: "../images/展示区/L8.jpeg" }

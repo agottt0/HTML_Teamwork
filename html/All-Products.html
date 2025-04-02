@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ASPHALT ALLEY</title>
+        <meta name="description" content="Top fashion outfits all at Asphalt Alley">
+        <meta name="keywords" content="Casual,Stylish,Edge">
+    
+        <link rel="stylesheet" href="../css/AllProducts.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <header>
+            <img src="../images/Logo.jpeg" alt="ASPHALT ALLEY" class="logo">
+        </header>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="New.html">New Arrivals</a>
+            <a href="Trending.html">Trending Now</a>
+            <a href="All-Products.html">All Products</a>
+            <a href="Contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <p>
+        <br>
+        <br>
+        <br>
+    </p>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search Products Here...">
+    </div>
+    
+    <div class="filter-section">
+        <div class="filter-group">
+            <h3>Category</h3>
+            <div id="categoryFilters"></div>
+        </div>
+        
+        <div class="filter-group">
+            <h3>Price Range</h3>
+            <div class="filter-option">
+                <input type="checkbox" id="price1" value="0-100">
+                <label for="price1">0-100</label>
+            </div>
+            <div class="filter-option">
+                <input type="checkbox" id="price2" value="100-500">
+                <label for="price2">100-500</label>
+            </div>
+            <div class="filter-option">
+                <input type="checkbox" id="price3" value="500-1000">
+                <label for="price3">500-1000</label>
+            </div>
+            <div class="filter-option">
+                <input type="checkbox" id="price4" value="1000+">
+                <label for="price4">1000 and above</label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="results-container" id="resultsContainer">
+        <!-- 结果将在这里动态生成 -->
+    </div>
+
+    <footer>
+        <p>Contact Us: E-Mail-2186510014@qq.com  Phone-18833691103</p>
+        <p>© 2025 ASPHALT ALLEY All rights reserved</p>
+    </footer>
+
+    <script src="../js/AllProducts.js"></script>
+</body>
