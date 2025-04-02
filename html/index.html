@@ -52,28 +52,34 @@
     <!-- 右侧分类列表 -->
     <div class="SubBrand">
         <!-- 第一类 -->
-        <div class="SubBrand-header">Fashionable Formal Attire Series</div>
-        <div class="SubBrand-item">Premium Shirt</div>
-        <div class="SubBrand-item">Elegant Trousers</div>
-        <div class="SubBrand-item">Tailored Suit</div>
-        <div class="SubBrand-item">Dress Shoes</div>
-        <div class="SubBrand-item">Silk Tie</div>
-        <div class="SubBrand-item">Accessories</div>
+        <div class="SubBrand-header" onclick="filterByCategory('Formal')">Fashionable Formal Attire Series</div>
+        <div class="SubBrand-item" onclick="filterByMultipleCategories(['Shirt', 'Formal'])">Premium Shirt</div>
+        <div class="SubBrand-item" onclick="filterByMultipleCategories(['Trousers', 'Formal'])">Elegant Trousers</div>
+        <div class="SubBrand-item" onclick="filterByMultipleCategories(['Suit', 'Formal'])">Tailored Suit</div>
+        <div class="SubBrand-item" onclick="filterByMultipleCategories(['Shoes', 'Formal'])">Dress Shoes</div>
+        <div class="SubBrand-item" onclick="filterByMultipleCategories(['Tie', 'Formal'])">Silk Tie</div>
+        <div class="SubBrand-item" onclick="filterByMultipleCategories(['Accessories', 'Formal'])">Accessories</div>
         
         <!-- 分隔线 -->
         <div class="SubBrand-divider"></div>
         
         <!-- 第二类 -->
-        <div class="SubBrand-header">Streetwear Skateboard Collection</div>
-        <div class="SubBrand-item">Urban Tops</div>
-        <div class="SubBrand-item">Urban Trousers</div>
-        <div class="SubBrand-item">Streetwear Set</div>
-        <div class="SubBrand-item">Watch</div>
-        <div class="SubBrand-item">Skate Shoes</div>
-        <div class="SubBrand-item">Street Accessories</div>
-        <div class="SubBrand-item">Custom Skateboard</div>
+        <div class="SubBrand-header" onclick="filterByCategory('Street')">Streetwear Skateboard Collection</div>
+        <div class="SubBrand-item" onclick="filterByMultipleCategories(['Shirt', 'Street'])">Urban Tops</div>
+        <div class="SubBrand-item" onclick="filterByMultipleCategories(['Trousers', 'Street'])">Urban Trousers</div>
+        <div class="SubBrand-item" onclick="filterByMultipleCategories(['Outfit', 'Street'])">Streetwear Set</div>
+        <div class="SubBrand-item" onclick="filterByMultipleCategories(['Watch', 'Street','Accessories'])">Watch</div>
+        <div class="SubBrand-item" onclick="filterByMultipleCategories(['Shoes', 'Street'])">Skate Shoes</div>
+        <div class="SubBrand-item" onclick="filterByMultipleCategories(['Accessories', 'Street'])">Street Accessories</div>
+        <div class="SubBrand-item" onclick="filterByMultipleCategories(['Skateboard'])">Custom Skateboard</div>
     </div>
-    
+    <script>
+        function filterByMultipleCategories(categories) {
+            // 将数组转换为逗号分隔的字符串，并进行URL编码
+            const categoriesParam = encodeURIComponent(categories.join(','));
+            window.location.href = `All-Products.html?categories=${categoriesParam}`;
+        }
+        </script>
 
     <!-- 服饰选购区 -->
     <div class="clothing-grid">

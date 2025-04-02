@@ -87,15 +87,268 @@ const itemsDatabase = [
         id:12,
         name:"OLD-SCHOOL SLIDE COUPLE",
         price:1299,
-        categories:["Street","Men","Women","Couple"],
+        categories:["Street","Men","Women","Couple","Denim"],
         image:"../images/C2.jpeg"
     },
+
     {
         id:13,
         name:"ASPHALT ANARCHY SERIES",
         price:599,
         categories:["Street","Men","Women","Couple","Series"],
         image:"../images/C3.jpeg"
+    },
+        
+    {
+        id:14,
+        name:"MIDNIGHT CRUISER",
+        price:99,
+        categories:["Street","Men","Women","Couple","Accessories"],
+        image:"../images/M1.jpeg"
+    },
+        
+    {
+        id:15,
+        name:"CYBER PUNKER",
+        price:49,
+        categories:["Street","Men","Women","Couple","Accessories"],
+        image:"../images/M2.jpeg"
+    },
+        
+    {
+        id:16,
+        name:"WILD TYPE",
+        price:79,
+        categories:["Street","Men","Women","Couple","Accessories"],
+        image:"../images/M3.jpeg"
+    },
+
+    {
+        id:17,
+        name:"LOVE FROM CUPID",
+        price:39,
+        categories:["Street","Men","Women","Couple","Accessories"],
+        image:"../images/M4.jpeg"
+    },
+
+    {
+        id:18,
+        name:"BASIC ASPHALT TSHIRT BUNDLE",
+        price:299,
+        categories:["Street","Men","Women","Couple","Shirt"],
+        image:"../images/T1.jpeg"
+    },
+
+    {
+        id:19,
+        name:"UNFINISHED PROTEST",
+        price:159,
+        categories:["Street","Men","Women","Shirt"],
+        image:"../images/T2.jpeg"
+    },
+
+    {
+        id:18,
+        name:"GENERATION DELETE",
+        price:199,
+        categories:["Street","Men","Women","Shirt"],
+        image:"../images/T3.jpeg"
+    },
+
+    {
+        id:18,
+        name:"PAIN KILLER TSHIRT BUNDLE",
+        price:599,
+        categories:["Street","Men","Women","Shirt"],
+        image:"../images/T4.jpeg"
+    },
+
+    {
+        id:19,
+        name:"GLITCHED HEART",
+        price:299,
+        categories:["Street","Men","Women","Shirt"],
+        image:"../images/T5.jpeg"
+    },
+
+    {
+        id:20,
+        name:"BINARY POET",
+        price:259,
+        categories:["Street","Men","Women","Shirt"],
+        image:"../images/T6.jpeg"
+    },
+
+    {
+        id:21,
+        name:"NEON GHOST",
+        price:199,
+        categories:["Street","Men","Women","Shirt"],
+        image:"../images/T7.jpeg"
+    },
+
+    {
+        id:21,
+        name:"DEAR GLORIA",
+        price:149,
+        categories:["Street","Men","Women","Shirt"],
+        image:"../images/T8.jpeg"
+    },
+    
+    {
+        id:22,
+        name:"GEAR GOD",
+        price:2999,
+        categories:["Street","Men","Women","Watch","Accessories"],
+        image:"../images/W1.jpeg"
+    },
+
+    {
+        id:23,
+        name:"RUSTED HEART",
+        price:2599,
+        categories:["Street","Men","Women","Watch","Accessories"],
+        image:"../images/W2.jpeg"
+    },
+
+    {
+        id:24,
+        name:"CHAIN REACTION",
+        price:1999,
+        categories:["Street","Men","Women","Watch","Accessories"],
+        image:"../images/W3.jpeg"
+    },
+
+    {
+        id:22,
+        name:"GLITCH GUARDIAN",
+        price:1899,
+        categories:["Street","Men","Women","Watch","Accessories"],
+        image:"../images/W4.jpeg"
+    },
+    
+    {
+        id:23,
+        name:"SKATE OR DIE",
+        price:399,
+        categories:["Street","Men","Women","Shoes"],
+        image:"../images/X1.jpeg"
+    },
+        
+    {
+        id:24,
+        name:"RAVE BOOST",
+        price:359,
+        categories:["Street","Men","Women","Shoes"],
+        image:"../images/X2.jpeg"
+    },
+        
+    {
+        id:25,
+        name:"STREET STROKE",
+        price:429,
+        categories:["Street","Men","Women","Shoes"],
+        image:"../images/X3.jpeg"
+    },
+        
+    {
+        id:26,
+        name:"ZERO GRAVITY",
+        price:199,
+        categories:["Street","Men","Women","Shoes"],
+        image:"../images/X4.jpeg"
+    },
+            
+    {
+        id:27,
+        name:"ASPHALT REAPER",
+        price:799,
+        categories:["Street","Men","Women","Skateboard"],
+        image:"../images/H1.jpeg"
+    },
+            
+    {
+        id:28,
+        name:"PIPE DREAM",
+        price:899,
+        categories:["Street","Men","Women","Skateboard"],
+        image:"../images/H2.jpeg"
+    },
+            
+    {
+        id:29,
+        name:"RUST EMPIRE",
+        price:999,
+        categories:["Street","Men","Women","Skateboard"],
+        image:"../images/H3.jpeg"
+    },
+
+                
+    {
+        id:30,
+        name:"Royal Luminance",
+        price:599,
+        categories:["Formal","Men","Women","Shirt"],
+        image:"../images/S1.jpeg"
+    },
+
+                
+    {
+        id:31,
+        name:"Versailles Silk",
+        price:999,
+        categories:["Formal","Men","Women","Shirt"],
+        image:"../images/S2.jpeg"
+    },
+
+                
+    {
+        id:32,
+        name:"Golden Mist",
+        price:1299,
+        categories:["Formal","Men","Women","Shirt"],
+        image:"../images/S3.jpeg"
+    },
+
+                
+    {
+        id:33,
+        name:"Glacier Vein",
+        price:999,
+        categories:["Formal","Men","Women","Shirt"],
+        image:"../images/S4.jpeg"
+    },
+
+    {
+        id:34,
+        name:"Monolith Pleat",
+        price:599,
+        categories:["Formal","Men","Women","Trousers"],
+        image:"../images/P1.jpeg"
+    },
+
+    {
+        id:35,
+        name:"Bridge Culotte",
+        price:499,
+        categories:["Formal","Men","Women","Trousers"],
+        image:"../images/P2.jpeg"
+    },
+
+    {
+        id:36,
+        name:"Noir Liquid",
+        price:699,
+        categories:["Formal","Men","Women","Trousers"],
+        image:"../images/P3.jpeg"
+    },
+
+    {
+        id:37,
+        name:"Solar Stream",
+        price:399,
+        categories:["Formal","Men","Women","Trousers"],
+        image:"../images/P4.jpeg"
     },
 ];
 
@@ -119,6 +372,32 @@ function init() {
     renderCategoryFilters();
     renderItems(itemsDatabase);
     setupEventListeners();
+    
+    // 从 URL 参数中获取多个类别
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoriesParam = urlParams.get('categories');
+    
+    if (categoriesParam) {
+        // 解码并分割为数组
+        const selectedCategories = decodeURIComponent(categoriesParam).split(',');
+        
+        // 选中对应的复选框并更新筛选状态
+        selectedCategories.forEach(category => {
+            const checkbox = document.querySelector(`input[value="${category}"]`);
+            if (checkbox) {
+                checkbox.checked = true;
+                if (!currentFilters.categories.includes(category)) {
+                    currentFilters.categories.push(category);
+                }
+            }
+        });
+        
+        // 应用筛选
+        filterItems();
+        
+        // 可选：清理URL参数（不刷新页面）
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
 }
 
 // 渲染类别筛选器
@@ -182,7 +461,7 @@ function filterItems() {
     // 按类别筛选
     if (currentFilters.categories.length > 0) {
         filteredItems = filteredItems.filter(item => 
-            currentFilters.categories.some(cat => item.categories.includes(cat))
+            currentFilters.categories.every(cat => item.categories.includes(cat))
         );
     }
     
