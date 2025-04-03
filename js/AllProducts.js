@@ -350,6 +350,70 @@ const itemsDatabase = [
         categories:["Formal","Men","Women","Trousers"],
         image:"../images/P4.jpeg"
     },
+
+    {
+        id:38,
+        name:"Crown Knot",
+        price:199,
+        categories:["Formal","Men","Women","Suit","Tie","Accessories"],
+        image:"../images/L1.jpeg"
+    },
+
+    {
+        id:39,
+        name:"Throne Silk",
+        price:259,
+        categories:["Formal","Men","Women","Suit","Tie","Accessories"],
+        image:"../images/L2.jpeg"
+    },
+
+    {
+        id:40,
+        name:"Golden Mist",
+        price:299,
+        categories:["Formal","Men","Women","Suit","Tie","Accessories"],
+        image:"../images/L3.jpeg"
+    },
+
+    {
+        id:41,
+        name:"Regal Blood",
+        price:159,
+        categories:["Formal","Men","Women","Suit","Tie","Accessories"],
+        image:"../images/L4.jpeg"
+    },
+
+    {
+        id:42,
+        name:"Imperial Arch",
+        price:1299,
+        categories:["Formal","Men","Suit","Shoes","Accessories"],
+        image:"../images/X5.jpeg"
+    },
+
+    {
+        id:43,
+        name:"Silent Decree",
+        price:1199,
+        categories:["Formal","Men","Suit","Shoes","Accessories"],
+        image:"../images/X6.jpeg"
+    },
+
+    {
+        id:44,
+        name:"Venom Stiletto",
+        price:1799,
+        categories:["Formal","Women","Suit","Shoes","Accessories"],
+        image:"../images/X7.jpeg"
+    },
+
+    {
+        id:45,
+        name:"Liquid Crown",
+        price:999,
+        categories:["Formal","Women","Suit","Shoes","Accessories"],
+        image:"../images/X8.jpeg"
+    },
 ];
 
 // 获取所有唯一的类别
