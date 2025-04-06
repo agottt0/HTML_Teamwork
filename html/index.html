@@ -12,7 +12,7 @@
 <body>
     
 
-    <!-- 导航栏 -->
+    <!-- navi bar -->
     <nav class="navbar">
         <header>
             <img src="../images/Logo.jpeg" alt="ASPHALT ALLEY" class="logo">
@@ -28,30 +28,29 @@
 
     
     <div class="main-container">
-        <!-- 左侧分类列表 -->
+        <!-- Four lines on the left -->
         <div class="category-list">
             <div class="category-item" data-category="1">Elite</div>
             <div class="category-item" data-category="2">Avant-Grade</div>
             <div class="category-item" data-category="3">Refined</div>
             <div class="category-item" data-category="4">Iconic</div>
-            <!-- 可继续增加其他类别 -->
         </div>
     
-        <!-- 中间展览区 -->
+        <!-- Slider in the middle -->
         <div class="slider-container">
             <div class="slider-wrapper">
                 <div class="slider" id="slider">
-                    <!-- 图片组通过 JS 动态切换 -->
+                    <!-- To change the pics , go to js  -->
                 </div>
-            <!-- 滑动按钮 -->    
+            <!-- Slide btn -->    
             <button class="prev-btn">&#10094;</button>
             <button class="next-btn">&#10095;</button>
             </div>
         </div>
     </div>
-    <!-- 右侧分类列表 -->
+    <!-- Catagroies on the right -->
     <div class="SubBrand">
-        <!-- 第一类 -->
+        <!-- Formal part -->
         <div class="SubBrand-header" onclick="filterByCategory('Formal')">Fashionable Formal Attire Series</div>
         <div class="SubBrand-item" onclick="filterByMultipleCategories(['Shirt', 'Formal'])">Premium Shirt</div>
         <div class="SubBrand-item" onclick="filterByMultipleCategories(['Trousers', 'Formal'])">Elegant Trousers</div>
@@ -60,10 +59,9 @@
         <div class="SubBrand-item" onclick="filterByMultipleCategories(['Tie', 'Formal'])">Silk Tie</div>
         <div class="SubBrand-item" onclick="filterByMultipleCategories(['Accessories', 'Formal'])">Accessories</div>
         
-        <!-- 分隔线 -->
         <div class="SubBrand-divider"></div>
         
-        <!-- 第二类 -->
+        <!-- Street style part -->
         <div class="SubBrand-header" onclick="filterByCategory('Street')">Streetwear Skateboard Collection</div>
         <div class="SubBrand-item" onclick="filterByMultipleCategories(['Shirt', 'Street'])">Urban Tops</div>
         <div class="SubBrand-item" onclick="filterByMultipleCategories(['Trousers', 'Street'])">Urban Trousers</div>
@@ -75,16 +73,16 @@
     </div>
     <script>
         function filterByMultipleCategories(categories) {
-            // 将数组转换为逗号分隔的字符串，并进行URL编码
+            // This is where you jump to allproduct page and select the filter. TAT
             const categoriesParam = encodeURIComponent(categories.join(','));
             window.location.href = `All-Products.html?categories=${categoriesParam}`;
         }
         </script>
 
-    <!-- 服饰选购区 -->
+    <!-- Attire picking (homepage) -->
     <div class="clothing-grid">
         <div class="clothing-item">
-            <!-- 图片和悬浮层容器 -->
+            <!-- img container  -->
             <div class="image-container">
                 <img src="../images/D1.jpeg" alt="img">
             </div>
@@ -206,12 +204,12 @@
         </div>
     </div>
     
-    <!-- 页脚 -->
+    <!-- footer -->
     <footer>
         <p>Contact Us: E-Mail-2186510014@qq.com  Phone-18833691103</p>
         <p>© 2025 ASPHALT ALLEY All rights reserved</p>
     </footer>
 
-    <script src="../js/script.js"></script> <!-- 未来可以写交互用 -->
+    <script src="../js/script.js"></script> <!-- js -->
 </body>
 </html>

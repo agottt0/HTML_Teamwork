@@ -1,4 +1,4 @@
-// 分类对应图片数据和按钮样式配置
+// classify pics and btns
 const categoriesWithStyles = {
     new: [
         {
@@ -53,7 +53,7 @@ const categoriesWithStyles = {
     ]
 };
 
-// 商品数据
+// product info (if u want something available for cart panel, add its info here)
 const products = {
     "D1": { name: "Power Suit · The Art of Command", price: 499, image: "../images/D1.jpeg" },
     "D2": { name: "Silhouette · The Poetry of Power", price: 799, image: "../images/D2.jpeg" },
@@ -75,7 +75,7 @@ const cartPanel = document.getElementById('cartPanel');
 const cartItemsContainer = document.getElementById('cartItems');
 const cartTotal = document.getElementById('cartTotal');
 
-// 结算按钮
+// check out btn
 const checkoutButton = document.createElement('button');
 checkoutButton.textContent = "Checkout";
 checkoutButton.className = "checkout-btn";
@@ -86,7 +86,7 @@ checkoutButton.addEventListener("click", () => {
 });
 cartPanel.appendChild(checkoutButton);
 
-// 渲染轮播
+// render slider
 function renderSlider(category) {
     slider.innerHTML = '';
     categoriesWithStyles[category].forEach((item, index) => {
@@ -100,12 +100,12 @@ function renderSlider(category) {
         addBtn.className = 'slider-add-btn';
         addBtn.textContent = 'ADD TO CART';
 
-        // 样式
+        // style
         Object.keys(item.buttonStyle).forEach(property => {
             addBtn.style[property] = item.buttonStyle[property];
         });
 
-        // 点击事件
+        // on click:
         addBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             const product = products[item.productId];
@@ -124,13 +124,13 @@ function renderSlider(category) {
     updateSlider();
 }
 
-// 更新轮播位置
+// update the pos of the slider
 function updateSlider() {
     const offset = -currentIndex * 760;
     slider.style.transform = `translateX(${offset}px)`;
 }
 
-// 更新购物车UI
+// update cart ui
 function updateCartUI() {
     cartCounter.textContent = cartItems.length;
     cartCounter.style.display = cartItems.length ? 'block' : 'none';
@@ -152,7 +152,7 @@ function updateCartUI() {
         `).join('');
     }
 
-    // 绑定删除
+    // remove 
     document.querySelectorAll('.remove-item-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -162,14 +162,14 @@ function updateCartUI() {
         });
     });
 
-    // 动画
+    // display
     if (cartItems.length > 0) {
         cartCounter.style.transform = 'scale(1.3)';
         setTimeout(() => cartCounter.style.transform = 'scale(1)', 200);
     }
 }
 
-// 左右按钮
+// LR btn
 document.querySelector('.prev-btn')?.addEventListener('click', () => {
     if (currentIndex > 0) {
         currentIndex--;
@@ -183,7 +183,7 @@ document.querySelector('.next-btn')?.addEventListener('click', () => {
     }
 });
 
-// 购物车浮窗开关
+// open and close cart panel
 document.querySelector('.cart-container').addEventListener('click', (e) => {
     e.stopPropagation();
     cartPanel.style.display = cartPanel.style.display === 'block' ? 'none' : 'block';
@@ -194,12 +194,13 @@ document.getElementById('cartCloseBtn').addEventListener('click', (e) => {
     cartPanel.style.display = 'none';
 });
 
-// 初始化
+// ini
 document.addEventListener("DOMContentLoaded", () => {
     renderSlider(currentCategory);
     updateCartUI();
 });
-// 绑定商品展示区的按钮
+
+// addtocart btn of attire picking area
 document.querySelectorAll('.add-to-cart-btn').forEach(button => {
     button.addEventListener('click', (e) => {
         e.stopPropagation();

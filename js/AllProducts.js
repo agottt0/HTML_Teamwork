@@ -1,4 +1,4 @@
-// 物品数据库
+// database (add products here!)
 const itemsDatabase = [
     { 
         id: 1, 
@@ -416,36 +416,35 @@ const itemsDatabase = [
     },
 ];
 
-// 获取所有唯一的类别
 const allCategories = [...new Set(itemsDatabase.flatMap(item => item.categories))];
 
-// DOM元素
+// DOM
 const searchInput = document.getElementById('searchInput');
 const categoryFilters = document.getElementById('categoryFilters');
 const resultsContainer = document.getElementById('resultsContainer');
 
-// 当前筛选状态
+// current status
 let currentFilters = {
     searchTerm: '',
     categories: [],
     priceRanges: []
 };
 
-// 初始化页面
+// ini
 function init() {
     renderCategoryFilters();
     renderItems(itemsDatabase);
     setupEventListeners();
     
-    // 从 URL 参数中获取多个类别
+    // receive filter info from html (homepage)
     const urlParams = new URLSearchParams(window.location.search);
     const categoriesParam = urlParams.get('categories');
     
     if (categoriesParam) {
-        // 解码并分割为数组
+        // split into array
         const selectedCategories = decodeURIComponent(categoriesParam).split(',');
         
-        // 选中对应的复选框并更新筛选状态
+        // tick the filters and update
         selectedCategories.forEach(category => {
             const checkbox = document.querySelector(`input[value="${category}"]`);
             if (checkbox) {
@@ -456,15 +455,15 @@ function init() {
             }
         });
         
-        // 应用筛选
+        // apply
         filterItems();
         
-        // 可选：清理URL参数（不刷新页面）
+        // clean URL
         window.history.replaceState({}, document.title, window.location.pathname);
     }
 }
 
-// 渲染类别筛选器
+// rend the filters part
 function renderCategoryFilters() {
     categoryFilters.innerHTML = allCategories.map(category => `
         <div class="filter-option">
@@ -474,15 +473,15 @@ function renderCategoryFilters() {
     `).join('');
 }
 
-// 设置事件监听器
+// listener
 function setupEventListeners() {
-    // 搜索框输入事件
+    // input event
     searchInput.addEventListener('input', (e) => {
         currentFilters.searchTerm = e.target.value.toLowerCase();
         filterItems();
     });
     
-    // 类别筛选变化
+    // change of cate
     categoryFilters.addEventListener('change', (e) => {
         if (e.target.type === 'checkbox') {
             const category = e.target.value;
@@ -495,7 +494,7 @@ function setupEventListeners() {
         }
     });
     
-    // 价格范围筛选变化
+    // prize range changes
     document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(checkbox => {
         if (checkbox.id.startsWith('price')) {
             checkbox.addEventListener('change', (e) => {
@@ -511,25 +510,25 @@ function setupEventListeners() {
     });
 }
 
-// 筛选物品
+// filter items
 function filterItems() {
     let filteredItems = itemsDatabase;
     
-    // 按搜索词筛选
+    // filter by keyword
     if (currentFilters.searchTerm) {
         filteredItems = filteredItems.filter(item => 
             item.name.toLowerCase().includes(currentFilters.searchTerm)
         );
     }
     
-    // 按类别筛选
+    // filter by cate
     if (currentFilters.categories.length > 0) {
         filteredItems = filteredItems.filter(item => 
             currentFilters.categories.every(cat => item.categories.includes(cat))
         );
     }
     
-    // 按价格范围筛选
+    // filter by prize range
     if (currentFilters.priceRanges.length > 0) {
         filteredItems = filteredItems.filter(item => {
             return currentFilters.priceRanges.some(range => {
@@ -545,12 +544,12 @@ function filterItems() {
     renderItems(filteredItems);
 }
 
-// 创建商品卡片元素的函数
+// where cards are created
 function createProductCard(item) {
     const card = document.createElement('div');
     card.className = 'item-card';
     
-    // 图片容器
+    // img container
     const imageContainer = document.createElement('div');
     imageContainer.className = 'product-image-container';
     
@@ -559,7 +558,7 @@ function createProductCard(item) {
     img.alt = item.name;
     imageContainer.appendChild(img);
     
-    // 商品信息
+    // product info
     const infoContainer = document.createElement('div');
     infoContainer.className = 'item-info';
     
@@ -578,18 +577,18 @@ function createProductCard(item) {
     price.className = 'price';
     price.textContent = `$${item.price}`;
     
-    // 组装信息容器
+    // build info container
     infoContainer.appendChild(title);
     infoContainer.appendChild(categories);
     infoContainer.appendChild(price);
     
-    // 组装卡片
+    // build card
     card.appendChild(imageContainer);
     card.appendChild(infoContainer);
     
     return card;
 }
-// 修改renderItems函数
+
 function renderItems(items) {
     resultsContainer.innerHTML = '';
     
@@ -607,5 +606,5 @@ function renderItems(items) {
     });
 }
 
-// 初始化应用
+// finally, initialize
 init();

@@ -9,17 +9,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let cart = [];
 
-    // 购物车图标点击显示购物车
+    // cart icon (need unify!)
     cartIcon.addEventListener("click", function() {
         cartPanel.style.display = "block";
     });
 
-    // 关闭购物车
     cartCloseBtn.addEventListener("click", function() {
         cartPanel.style.display = "none";
     });
 
-    // 添加商品到购物车
     addToCartButtons.forEach(button => {
         button.addEventListener("click", function() {
             const productId = this.getAttribute("data-product-id");
@@ -28,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // 更新购物车
     function updateCart() {
         cartCounter.textContent = cart.length;
         cartTotal.textContent = cart.length;

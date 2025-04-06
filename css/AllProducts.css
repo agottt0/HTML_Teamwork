@@ -1,4 +1,4 @@
-/* search.css - 搜索系统样式 */
+/* search system */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,14 +7,14 @@ body {
 }
 
 .logo {
-    width: 120px; /* 调整 logo 宽度 */
+    width: 120px; /* adjust logo width here !! */
     height: auto;
     display: block;
     margin: 0 auto;
     margin-left: 20px;
 }
 
-/* 导航栏 */
+/* navi */
 .navbar 
 {
     position: fixed;
@@ -46,7 +46,7 @@ body {
     padding-bottom: 2px; /* 增加间距 */
 }
 
-/* 搜索容器 */
+/* search bar here */
 .search-container {
     position: relative;
     margin: 15px auto;
@@ -54,7 +54,7 @@ body {
     padding: 0 20px;
 }
 
-/* 搜索输入框 */
+/* input text */
 #searchInput {
     width: 100%;
     padding: 12px 20px;
@@ -71,7 +71,7 @@ body {
     box-shadow: 0 2px 10px rgba(58, 134, 255, 0.2);
 }
 
-/* 筛选区域 */
+/* filter area */
 .filter-section {
     display: flex;
     flex-wrap: wrap;
@@ -97,7 +97,7 @@ body {
     font-size: 18px;
 }
 
-/* 筛选选项 */
+/* filters */
 .filter-option {
     margin: 10px 0;
     display: flex;
@@ -141,7 +141,7 @@ body {
     color: #3a86ff;
 }
 
-/* 搜索结果容器 */
+/* result here */
 .results-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -150,7 +150,7 @@ body {
     margin: 30px 0;
 }
 
-/* 商品卡片 */
+/* This is where you change the look of the product cards */
 .item-card {
     display: flex;
     flex-direction: column;
@@ -176,12 +176,12 @@ body {
 
 .item-card img {
     width: 100%;
-    height: auto; /* 让高度自适应 */
-    object-fit: contain; /* 保持图片比例，完整显示 */
+    height: auto; 
+    object-fit: contain; 
     background-color: #f8f8f8;
     display: block;
-    max-height: 300px; /* 设置最大高度防止过大 */
-    min-height: 200px; /* 设置最小高度保证一致性 */
+    max-height: 300px; 
+    min-height: 200px; 
 }
 
 .item-card .item-info {
@@ -204,7 +204,6 @@ body {
     margin-top: auto;
 }
 
-/* 类别标签 */
 .category {
     display: inline-block;
     background: #e3f2fd;
@@ -216,7 +215,7 @@ body {
     margin-bottom: 5px;
 }
 
-/* 无结果提示 */
+/* if there is no results, then: */
 .no-results {
     grid-column: 1 / -1;
     text-align: center;
@@ -225,7 +224,6 @@ body {
     font-size: 18px;
 }
 
-/* 响应式设计 */
 @media (max-width: 768px) {
     .filter-section {
         flex-direction: column;
@@ -241,7 +239,7 @@ body {
     }
 }
 
-/* 与现有导航栏集成 */
+
 .navbar .search-container {
     margin: 0;
     padding: 0 15px;
@@ -256,7 +254,7 @@ body {
     background-color: #f8f9fa;
 }
 
-/* 购物车集成 */
+/* cart, need rebuild! */
 .cart-panel .search-container {
     margin: 10px 0;
     padding: 0;

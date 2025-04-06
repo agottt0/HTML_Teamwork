@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- Navi bar -->
     <nav class="navbar">
         <header>
             <img src="../images/Logo.jpeg" alt="ASPHALT ALLEY" class="logo">
@@ -21,7 +21,7 @@
         </div>
     </nav>
 
-    <!-- 结算内容 -->
+    <!-- Checkout -->
     <div class="checkout-container">
         <h2>结算</h2>
         <div id="checkoutItems" class="checkout-items"></div>
@@ -29,7 +29,6 @@
         <button class="pay-btn">确认支付</button>
     </div>
     
-    <!-- 页脚 -->
     <footer>
         <p>Contact Us: E-Mail-2186510014@qq.com  Phone-18833691103</p>
         <p>© 2025 ASPHALT ALLEY All rights reserved</p>
@@ -43,7 +42,7 @@
             let totalPrice = 0;
 
             if (checkoutItems.length === 0) {
-                checkoutContainer.innerHTML = "<p>您的购物车为空。</p>";
+                checkoutContainer.innerHTML = "<p>Your cart is empty.</p>";
             } else {
                 checkoutItems.forEach(item => {
                     const itemEl = document.createElement("div");

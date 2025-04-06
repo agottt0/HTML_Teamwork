@@ -1,4 +1,3 @@
-/* 基本样式 */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,14 +6,13 @@ body {
 }
 
 .logo {
-    width: 120px; /* 调整 logo 宽度 */
+    width: 120px; 
     height: auto;
     display: block;
     margin: 0 auto;
     margin-left: 20px;
 }
 
-/* 导航栏 */
 .navbar 
 {
     position: fixed;
@@ -40,38 +38,39 @@ body {
 }
 
 .navbar a:hover {
-    color: #3a86ff; /* 悬停色 */
-    text-decoration: none; /* 移除默认下划线 */
-    border-bottom: 2px solid currentColor; /* 底部边框 */
-    padding-bottom: 2px; /* 增加间距 */
+    color: #3a86ff; 
+    text-decoration: none; 
+    border-bottom: 2px solid currentColor; 
+    padding-bottom: 2px; 
 }
 
 
-/* 主要展示区 */
+/* Main */
+
 .main-container {
     display: flex;
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
+    justify-content: center;
+    align-items: center; 
     width: 100%;
     height: 900px;
-    background-color: #cfced2; /* 整体浅灰色背景 */
+    background-color: #cfced2; /* background */
     padding: 20px;
     box-sizing: border-box;
     margin-top:50px;
 }
 
-/* 左侧类别栏 */
+/* left */
 .category-list {
-    width: 8%; /* 固定宽度 */
+    width: 8%; 
     background-color: #cfced2;
     min-width: 120px;
     max-width: 180px;
     flex-direction: column;
     padding: 20px;
-    position: absolute; /* 让它脱离 .main-container 的居中影响 */
-    left: 3px; /* 固定在左侧 */
-    top: 56%; /* 居中对齐 */
-    transform: translateY(-25%); /* 确保垂直居中 */
+    position: absolute; /* dont change this plz */
+    left: 3px; 
+    top: 56%; 
+    transform: translateY(-25%); 
     z-index: 0;
 }
 
@@ -84,14 +83,10 @@ body {
     transition: all 0.3s ease;
     font-weight: bold;
     font-size: 14px;
-    user-select: none; /* 禁止文本选中 */
-    -webkit-user-select: none; /* Safari 兼容 */
-    -moz-user-select: none; /* Firefox 兼容 */
-    -ms-user-select: none; /* IE/Edge 兼容 */
+    user-select: none; 
 }
 
 
-/* 中间展示 */
 .slider-container {
     width: 100%;
     max-width:760px;
@@ -100,7 +95,7 @@ body {
     background-color: #cfced2;
     display: flex;
     align-items: center;
-    margin: 0 100px 0 0px; /* 上右下左 - 只保留左边距20px */
+    margin: 0 100px 0 0px; 
 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 
@@ -124,8 +119,8 @@ body {
 .slider img 
 {
     width: 100%;
-    max-width: 760px; /* 保证16:9的宽度 */
-    height: auto; /* 让高度自适应，保持16:9比例 */
+    max-width: 760px; /* dont touch this im serious */
+    height: auto; /* use 16:9 pics ONLY */
     user-select: none;
 }
 
@@ -158,10 +153,10 @@ body {
 .next-btn {
     right: 20px;
 }
-/* 适配移动端 */
+
 @media (max-width: 768px) {
     .slider img {
-        max-width: 100%; /* 小屏幕下全宽显示 */
+        max-width: 100%; 
     }
     .prev-btn, .next-btn {
         padding: 8px;
@@ -169,7 +164,7 @@ body {
     }
 }
 
-/* 右侧类别栏 */
+/* right */
 .SubBrand {
     width: 12%;
     min-width: 180px;
@@ -187,7 +182,7 @@ body {
     overflow-y: auto;
 }
 
-/* 分类大标题 */
+/* big header */
 .SubBrand-header {
     padding: 5px;
     text-align: center;
@@ -203,7 +198,7 @@ body {
     cursor: default;
 }
 
-/* 分类子项 */
+/* little ones */
 .SubBrand-item {
     margin: 3px 0;
     padding: 8px 12px;
@@ -216,7 +211,6 @@ body {
     border-left: 3px solid transparent;
 }
 
-/* 子项悬停效果（下划线） */
 .SubBrand-item:hover {
     text-decoration: underline;
     text-decoration-color: #0066cc;
@@ -225,21 +219,19 @@ body {
     background-color: #f8f9fa;
 }
 
-/* 轮播图图片容器样式 */
+/* change the look of slider here */
 .slider-img-container {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-/* 轮播图单张幻灯片样式 */
 .slide {
     position: relative;
     width: 100%;
     flex-shrink: 0;
 }
 
-/* 轮播图单张幻灯片样式 */
 .slide {
     position: relative;
     width: 100%;
@@ -247,7 +239,6 @@ body {
     overflow: hidden;
 }
 
-/* 轮播图添加按钮基础样式 */
 .slider-add-btn {
     position: absolute;
     cursor: pointer;
@@ -265,21 +256,20 @@ body {
     transform: scale(1.03);
 }
 
-/* 分隔线 */
 .SubBrand-divider {
     height: 1px;
     background-color: #eee;
     margin: 10px 0;
 }
 
-/* 服饰选购区 */
+/* attire picking */
 .clothing-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 0;
     margin: 10px;
-    max-width: 100vw; /* 控制最大宽度 */
+    max-width: 100vw;
     max-width: none;
 }
 
@@ -287,17 +277,15 @@ body {
     position: relative;
     aspect-ratio: 4/3;
     border: 1px solid #f0f0f0;
-    overflow: visible; /* 允许浮窗溢出 */
+    overflow: visible; 
 }
 
-/* 图片容器样式 */
 .image-container {
     position: relative;
     height: 100%;
     width: 100%;
 }
 
-/* 图片样式 */
 .image-container img {
     width: 100%;
     height: 100%;
@@ -319,7 +307,7 @@ body {
     border-radius: 10px;
 }
 
-/* 加入购物车按钮 */
+/* cart btn */
 .add-to-cart-btn {
     position: absolute;
     bottom: 20px;
@@ -336,13 +324,12 @@ body {
     z-index: 10;
 }
 
-/* 右侧空间不足时浮窗显示在左侧 */
+/* show tip on the left if no room on the right side */
 .clothing-item:nth-child(even) .product-tooltip {
     left: auto;
     right: 100%;
 }
 
-/* 悬停效果 */
 .clothing-item:hover .add-to-cart-btn {
     opacity: 1;
 }
@@ -351,7 +338,6 @@ body {
     opacity: 1;
 }
 
-/* 页脚 */
 footer {
     background-color: #333;
     color: #fff;
@@ -359,7 +345,7 @@ footer {
     padding: 15px 0;
     margin-top: 30px;
 }
-/* 购物车容器样式 */
+/* cart look */
 .cart-container {
     position: fixed;
     left: 20px;
@@ -373,14 +359,14 @@ footer {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* 购物车图标 */
+/* use this icon always */
 .cart-icon {
     font-size: 24px;
     color: #333;
     position: relative;
 }
 
-/* 小红点样式 */
+/* red dot (or badge) */
 .badge {
     position: absolute;
     top: -8px;
@@ -393,12 +379,13 @@ footer {
     display: none; /* 默认隐藏 */
     transition: transform 0.2s;
 }
-/* 新增购物车浮窗样式 */
+
+/* tip panel of cart */
 .cart-panel {
     position: fixed;
-    left: 100px; /* 🟢 改为左侧定位，与购物车图标对齐 */
+    left: 100px;
     top: 50%;
-    transform: translateY(-50%); /* 🟢 垂直居中 */
+    transform: translateY(-50%); 
     width: 300px;
     background: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -436,7 +423,6 @@ footer {
     color: #999;
 }
 
-/* 🟢 新增移除按钮样式 */
 .remove-item-btn {
     background: none;
     border: none;
@@ -445,7 +431,7 @@ footer {
     font-size: 14px;
     margin-left: 10px;
 }
-/* 结算页面样式 */
+
 .checkout-container {
     max-width: 800px;
     margin: 100px auto 50px;
