@@ -10,17 +10,20 @@
         <link rel="stylesheet" href="../css/AllProducts.css">
 </head>
 <body>
-    <!-- Navigate Bar -->
     <nav class="navbar">
         <header>
             <img src="../images/Logo.jpeg" alt="ASPHALT ALLEY" class="logo">
+            <div class="user-profile">
+                <img src="../images/user-icon.png" alt="User" class="user-avatar">
+                <span class="username">User</span>
+            </div>
         </header>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="New.html">New Arrivals</a>
             <a href="Trending.html">Trending Now</a>
             <a href="All-Products.html">All Products</a>
-            <a href="Contact.html">Contact Us</a>
+            <a href="About.html" class="active">About Us</a>
         </div>
     </nav>
 
@@ -37,7 +40,7 @@
     <div class="filter-section">
         <div class="filter-group">
             <h3>Category</h3>
-            <div id="categoryFilters"></div>
+            <div id="categoryFilters" class="category-filters-container"></div>
         </div>
         
         <div class="filter-group">
@@ -73,6 +76,11 @@
         </div>
     </div>
     
+    <!--NEW! Add Clothe System is now online! -->
+    <div class="submit-item-container">
+        <button id="openSubmitForm" class="submit-item-btn">Add Your Item Right Now</button>
+    </div>
+    
     <div class="results-container" id="resultsContainer">
         <!-- Results -->
     </div>
@@ -83,4 +91,5 @@
     </footer>
 
     <script src="../js/AllProducts.js"></script>
+    <script src="../js/auth.js"></script>
 </body>
